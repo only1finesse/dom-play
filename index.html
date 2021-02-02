@@ -1,1 +1,52 @@
-<body> This is a Dom Play page</body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Play</title>
+    <style>
+        #clickspans span {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Play assignment goes here</h1>
+    <!-- <p><span onclick="highlight(this)">Text goes here</span></p> -->
+    <div id="clickspans">
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+        <p><span>Text goes here</span></p>
+    </div>
+</body>
+
+<script>
+    const spans = document.querySelectorAll("#clickspans span");
+
+    for (const mySpan of spans) {
+        mySpan.addEventListener("click", function (event) {
+            if (mySpan.style.backgroundColor == 'yellow') {              // if yellow, turn to normal (white)
+                mySpan.style.backgroundColor = 'white'
+
+            } else {              // if not yellow, then make it yellow
+                mySpan.style.backgroundColor = 'yellow'
+            }
+        });
+
+    }
+    /* function highlight(el) {
+
+        if (el.style.backgroundColor == 'yellow') {              // if yellow, turn to normal (white)
+            el.style.backgroundColor = 'white'
+
+        } else {              // if not yellow, then make it yellow
+            el.style.backgroundColor = 'yellow'
+        }
+    }
+     */
+</script>
+
+</html>
