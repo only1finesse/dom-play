@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Play</title>
+    <style>
+        #clickspans span {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Play assignment goes here</h1>
+    <!-- <p><span onclick="highlight(this)">Text goes here</span></p> -->
+    <div id="clickspans">
+        <p><span data-actor="hamlet">Hamlet: To be or not to be, that is the question</span></p>
+        <p><span data-actor="skull">Skull: Don't ask me, I am only a skull</span></p>
+        <p><span data-actor="hamlet">Hamlet: What did you say?</span></p>
+        <p><span data-actor="skull">Skull: Nothing, I am only a figment of your imagination</span></p>
+        <p><span data-actor="hamlet">Hamlet: Oh good! I thought I was going crazy</span></p>
+
+        
+    </div>
+</body>
+ 
+<script>
+    var spans = document.querySelectorAll("#clickspans span");
+    // spans is var so that data becomes global
+
+    for (const mySpan of spans) {
+        mySpan.addEventListener("click", function (event) {
+
+            // alert(mySpan.dataset.actor);
+
+            // if (mySpan.style.backgroundColor == 'yellow') {              // if yellow, turn to normal (white)
+            //     mySpan.style.backgroundColor = 'white'
+
+            // } else {              // if not yellow, then make it yellow
+            //     mySpan.style.backgroundColor = 'yellow'
+            // }
+
+            highlightActor(mySpan.dataset.actor)
+        });
+
+    }
+    function highlightActor(myActor) {
+       //  alert("hello from highlighted actor " + myActor);
+        /*    if (el.style.backgroundColor == 'yellow') {              // if yellow, turn to normal (white)
+                el.style.backgroundColor = 'white'
+    
+            } else {              // if not yellow, then make it yellow
+                el.style.backgroundColor = 'yellow'
+            } */
+
+        for (const mySpan of spans) {
+            if (mySpan.dataset.actor == myActor) {              // current actor, highlight
+                mySpan.style.backgroundColor = 'yellow'
+                mySpan.style.fontWeight = 'bold'
+
+            } else {              // if not current actor, change to white
+                mySpan.style.backgroundColor = 'white'
+                mySpan.style.fontWeight = 'normal'
+            }
+        }
+    }
+
+</script>
+
+</html>
