@@ -306,13 +306,14 @@
 
       for (const mySpan of spans) {
         if (mySpan.dataset.actor == myActor) {              // current actor, highlight
-          mySpan.style.backgroundColor = 'yellow'
-          mySpan.style.fontWeight = 'bold'
-          // mySpan.style.color = 'white'
+          mySpan.style.backgroundColor = 'purple'
+          mySpan.style.fontWeight = 'bolder'
+           mySpan.style.color = 'white'
 
         } else {              // if not current actor, change to white
           mySpan.style.backgroundColor = 'white'
           mySpan.style.fontWeight = 'normal'
+          mySpan.style.color = 'black'
         }
       }
     }
